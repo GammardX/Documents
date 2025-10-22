@@ -4,10 +4,18 @@ body, html {
   font-family: monospace;
   font-size: 1.2em;
   font-weight: bold;
+  color: #002B5C; 
+  background-color: #f8f9fb;
 }
 
 a {
-  color: black;
+  color: #0054A6; 
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover {
+  color: #0078D7; 
   text-decoration: underline;
 }
 
@@ -42,7 +50,7 @@ section h1 {
   text-align: center;
   border-radius: 1em;
   color: white;
-  background-color: black;
+  background-color: #0054A6;
 }
 
 .indented {
@@ -71,14 +79,19 @@ section h1 {
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
+    align-items: center;
   }
 
   section {
-    padding: 0.5em;
+    padding: 0.8em 1em;
   }
 
   #nav-navigation {
     flex-direction: column;
     align-items: center;
+  }
+
+  #header-logo {
+    width: 9em;
   }
 }
