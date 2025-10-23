@@ -14,10 +14,9 @@ jobs:
 
       - name: Update last-update timestamp
         run: |
-          # Imposta fuso orario Italia
           export TZ="Europe/Rome"
           DATE=$(date +"%Y/%m/%d %H:%M")
-          sed -i "s/<p id=\"last-update\">.*<\/p>/<p id=\"last-update\">Last update: $DATE<\/p>/" index.html
+          sed -i "s|<p id=\"last-update\">.*</p>|<p id=\"last-update\">Last update: $DATE</p>|" index.html
 
       - name: Commit and push changes
         run: |
