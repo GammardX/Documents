@@ -13,7 +13,7 @@ jobs:
       # Checkout con token predefinito per push
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN  }}
 
       - name: Update last-update timestamp
         run: |
