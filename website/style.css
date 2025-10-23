@@ -95,3 +95,25 @@ section h1 {
     width: 9em;
   }
 }
+
+.toggle-section::before {
+  content: "▼ ";
+  display: inline-block;
+  margin-right: 0.5em;
+  transition: transform 0.2s ease;
+}
+
+.toggle-section.collapsed::before {
+  transform: rotate(-90deg);
+}
+
+.toggle-subsection::before {
+  content: "▼ ";
+  display: inline-block;
+  margin-right: 0.5em;
+  transition: transform 0.2s ease;
+}
+
+.toggle-subsection.collapsed::before {
+  transform: rotate(-90deg);
+}
