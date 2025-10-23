@@ -117,3 +117,15 @@ section h1 {
 .toggle-subsection.collapsed::before {
   transform: rotate(-90deg);
 }
+
+.email-link {
+  font-family: monospace;
+  color: #0054A6;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.email-link:hover {
+  color: #0078D7;
+  text-decoration: underline;
+}
