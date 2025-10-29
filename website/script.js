@@ -9,16 +9,20 @@ async function loadDocuments(path, listContainer) {
 		const data = await response.json();
 
 		// Filtra solo file (non directory)
-		const files = data.filter((item) => item.type === 'file');
+		const files = data.filter((item) => item.type === 'file').reverse();
 
 		files.forEach((file) => {
+			const fileName = file.name.replace(/\.pdf$/i, '');
+
+			const rawPath = `${path}/${file.name}`;
+			const fileUrl = encodeURI(rawPath);
 			const p = document.createElement('p');
-			p.setAttribute('content', file.name);
+			p.setAttribute('content', fileName);
 
 			const link = document.createElement('a');
 			link.setAttribute('target', '_blank');
-			link.setAttribute('href', file.html_url);
-			link.textContent = file.name;
+			link.setAttribute('href', fileUrl);
+			link.textContent = fileName;
 
 			p.appendChild(link);
 			listContainer.appendChild(p);
