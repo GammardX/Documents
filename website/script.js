@@ -3,12 +3,13 @@ const repoName = 'Documents';
 
 async function loadDocuments(path, listContainer) {
 	try {
-		const response = await fetch('documents.json');
+		const response = await fetch(
+			`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}`
+		);
 		const data = await response.json();
 
 		// Filtra solo file (non directory)
 		const files = data.filter((item) => item.type === 'file');
-		console.log(files);
 
 		files.forEach((file) => {
 			const p = document.createElement('p');
