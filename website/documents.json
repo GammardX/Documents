@@ -1,0 +1,764 @@
+[
+  {
+    "type": "directory",
+    "name": ".git",
+    "path": ".git",
+    "children": [
+      {
+        "type": "file",
+        "name": "FETCH_HEAD",
+        "path": ".git/FETCH_HEAD",
+        "url": "https://github.com/GammardX/Documents/blob/main/.git/FETCH_HEAD"
+      },
+      {
+        "type": "file",
+        "name": "HEAD",
+        "path": ".git/HEAD",
+        "url": "https://github.com/GammardX/Documents/blob/main/.git/HEAD"
+      },
+      {
+        "type": "file",
+        "name": "config",
+        "path": ".git/config",
+        "url": "https://github.com/GammardX/Documents/blob/main/.git/config"
+      },
+      {
+        "type": "file",
+        "name": "config.worktree",
+        "path": ".git/config.worktree",
+        "url": "https://github.com/GammardX/Documents/blob/main/.git/config.worktree"
+      },
+      {
+        "type": "file",
+        "name": "description",
+        "path": ".git/description",
+        "url": "https://github.com/GammardX/Documents/blob/main/.git/description"
+      },
+      {
+        "type": "directory",
+        "name": "hooks",
+        "path": ".git/hooks",
+        "children": [
+          {
+            "type": "file",
+            "name": "applypatch-msg.sample",
+            "path": ".git/hooks/applypatch-msg.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/applypatch-msg.sample"
+          },
+          {
+            "type": "file",
+            "name": "commit-msg.sample",
+            "path": ".git/hooks/commit-msg.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/commit-msg.sample"
+          },
+          {
+            "type": "file",
+            "name": "fsmonitor-watchman.sample",
+            "path": ".git/hooks/fsmonitor-watchman.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/fsmonitor-watchman.sample"
+          },
+          {
+            "type": "file",
+            "name": "post-update.sample",
+            "path": ".git/hooks/post-update.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/post-update.sample"
+          },
+          {
+            "type": "file",
+            "name": "pre-applypatch.sample",
+            "path": ".git/hooks/pre-applypatch.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/pre-applypatch.sample"
+          },
+          {
+            "type": "file",
+            "name": "pre-commit.sample",
+            "path": ".git/hooks/pre-commit.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/pre-commit.sample"
+          },
+          {
+            "type": "file",
+            "name": "pre-merge-commit.sample",
+            "path": ".git/hooks/pre-merge-commit.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/pre-merge-commit.sample"
+          },
+          {
+            "type": "file",
+            "name": "pre-push.sample",
+            "path": ".git/hooks/pre-push.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/pre-push.sample"
+          },
+          {
+            "type": "file",
+            "name": "pre-rebase.sample",
+            "path": ".git/hooks/pre-rebase.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/pre-rebase.sample"
+          },
+          {
+            "type": "file",
+            "name": "pre-receive.sample",
+            "path": ".git/hooks/pre-receive.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/pre-receive.sample"
+          },
+          {
+            "type": "file",
+            "name": "prepare-commit-msg.sample",
+            "path": ".git/hooks/prepare-commit-msg.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/prepare-commit-msg.sample"
+          },
+          {
+            "type": "file",
+            "name": "push-to-checkout.sample",
+            "path": ".git/hooks/push-to-checkout.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/push-to-checkout.sample"
+          },
+          {
+            "type": "file",
+            "name": "sendemail-validate.sample",
+            "path": ".git/hooks/sendemail-validate.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/sendemail-validate.sample"
+          },
+          {
+            "type": "file",
+            "name": "update.sample",
+            "path": ".git/hooks/update.sample",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/hooks/update.sample"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "name": "index",
+        "path": ".git/index",
+        "url": "https://github.com/GammardX/Documents/blob/main/.git/index"
+      },
+      {
+        "type": "directory",
+        "name": "info",
+        "path": ".git/info",
+        "children": [
+          {
+            "type": "file",
+            "name": "exclude",
+            "path": ".git/info/exclude",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/info/exclude"
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "logs",
+        "path": ".git/logs",
+        "children": [
+          {
+            "type": "file",
+            "name": "HEAD",
+            "path": ".git/logs/HEAD",
+            "url": "https://github.com/GammardX/Documents/blob/main/.git/logs/HEAD"
+          },
+          {
+            "type": "directory",
+            "name": "refs",
+            "path": ".git/logs/refs",
+            "children": [
+              {
+                "type": "directory",
+                "name": "heads",
+                "path": ".git/logs/refs/heads",
+                "children": [
+                  {
+                    "type": "file",
+                    "name": "main",
+                    "path": ".git/logs/refs/heads/main",
+                    "url": "https://github.com/GammardX/Documents/blob/main/.git/logs/refs/heads/main"
+                  }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "remotes",
+                "path": ".git/logs/refs/remotes",
+                "children": [
+                  {
+                    "type": "directory",
+                    "name": "origin",
+                    "path": ".git/logs/refs/remotes/origin",
+                    "children": [
+                      {
+                        "type": "file",
+                        "name": "main",
+                        "path": ".git/logs/refs/remotes/origin/main",
+                        "url": "https://github.com/GammardX/Documents/blob/main/.git/logs/refs/remotes/origin/main"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "objects",
+        "path": ".git/objects",
+        "children": [
+          {
+            "type": "directory",
+            "name": "0b",
+            "path": ".git/objects/0b",
+            "children": [
+              {
+                "type": "file",
+                "name": "d83074f772a90a23bb70ac165188bf338e63d8",
+                "path": ".git/objects/0b/d83074f772a90a23bb70ac165188bf338e63d8",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/0b/d83074f772a90a23bb70ac165188bf338e63d8"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "0f",
+            "path": ".git/objects/0f",
+            "children": [
+              {
+                "type": "file",
+                "name": "1194d2dd1dc716b5a21b2a21e0211fb86ac980",
+                "path": ".git/objects/0f/1194d2dd1dc716b5a21b2a21e0211fb86ac980",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/0f/1194d2dd1dc716b5a21b2a21e0211fb86ac980"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "13",
+            "path": ".git/objects/13",
+            "children": [
+              {
+                "type": "file",
+                "name": "0ca2902df31ca97e7d4d702e2517f52c4eb9e4",
+                "path": ".git/objects/13/0ca2902df31ca97e7d4d702e2517f52c4eb9e4",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/13/0ca2902df31ca97e7d4d702e2517f52c4eb9e4"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "21",
+            "path": ".git/objects/21",
+            "children": [
+              {
+                "type": "file",
+                "name": "1fdf2dca47a8800de839a3e27db9e8d9021344",
+                "path": ".git/objects/21/1fdf2dca47a8800de839a3e27db9e8d9021344",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/21/1fdf2dca47a8800de839a3e27db9e8d9021344"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "25",
+            "path": ".git/objects/25",
+            "children": [
+              {
+                "type": "file",
+                "name": "e09a9fb3abec709900f7c7a877f333cc2d6e67",
+                "path": ".git/objects/25/e09a9fb3abec709900f7c7a877f333cc2d6e67",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/25/e09a9fb3abec709900f7c7a877f333cc2d6e67"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "2a",
+            "path": ".git/objects/2a",
+            "children": [
+              {
+                "type": "file",
+                "name": "849382ea119fbde335fd44dfe71bde8fcf6fb5",
+                "path": ".git/objects/2a/849382ea119fbde335fd44dfe71bde8fcf6fb5",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/2a/849382ea119fbde335fd44dfe71bde8fcf6fb5"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "2d",
+            "path": ".git/objects/2d",
+            "children": [
+              {
+                "type": "file",
+                "name": "be97599604cf9c148b9693df18a765c2534e2b",
+                "path": ".git/objects/2d/be97599604cf9c148b9693df18a765c2534e2b",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/2d/be97599604cf9c148b9693df18a765c2534e2b"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "46",
+            "path": ".git/objects/46",
+            "children": [
+              {
+                "type": "file",
+                "name": "a92a7d44e5078d754f106186be93414151f977",
+                "path": ".git/objects/46/a92a7d44e5078d754f106186be93414151f977",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/46/a92a7d44e5078d754f106186be93414151f977"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "54",
+            "path": ".git/objects/54",
+            "children": [
+              {
+                "type": "file",
+                "name": "390b59291277bf04eb12c3211de41124ba24b7",
+                "path": ".git/objects/54/390b59291277bf04eb12c3211de41124ba24b7",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/54/390b59291277bf04eb12c3211de41124ba24b7"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "56",
+            "path": ".git/objects/56",
+            "children": [
+              {
+                "type": "file",
+                "name": "c19e333bb8e53751826da3769ca182bca97157",
+                "path": ".git/objects/56/c19e333bb8e53751826da3769ca182bca97157",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/56/c19e333bb8e53751826da3769ca182bca97157"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "5a",
+            "path": ".git/objects/5a",
+            "children": [
+              {
+                "type": "file",
+                "name": "fbae891314db64ea3a5d371ae52485ea9f997a",
+                "path": ".git/objects/5a/fbae891314db64ea3a5d371ae52485ea9f997a",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/5a/fbae891314db64ea3a5d371ae52485ea9f997a"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "66",
+            "path": ".git/objects/66",
+            "children": [
+              {
+                "type": "file",
+                "name": "a6df4826ff5264501015d4cafbbcfac1149140",
+                "path": ".git/objects/66/a6df4826ff5264501015d4cafbbcfac1149140",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/66/a6df4826ff5264501015d4cafbbcfac1149140"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "6c",
+            "path": ".git/objects/6c",
+            "children": [
+              {
+                "type": "file",
+                "name": "b9ca2ca571f5d64bceb991c88f2674b533d99a",
+                "path": ".git/objects/6c/b9ca2ca571f5d64bceb991c88f2674b533d99a",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/6c/b9ca2ca571f5d64bceb991c88f2674b533d99a"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "90",
+            "path": ".git/objects/90",
+            "children": [
+              {
+                "type": "file",
+                "name": "56387df8a682656988168e5cd2d290fcb4e612",
+                "path": ".git/objects/90/56387df8a682656988168e5cd2d290fcb4e612",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/90/56387df8a682656988168e5cd2d290fcb4e612"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "92",
+            "path": ".git/objects/92",
+            "children": [
+              {
+                "type": "file",
+                "name": "c4c0350c6be80e4d62c826c48b40e8735b265e",
+                "path": ".git/objects/92/c4c0350c6be80e4d62c826c48b40e8735b265e",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/92/c4c0350c6be80e4d62c826c48b40e8735b265e"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "95",
+            "path": ".git/objects/95",
+            "children": [
+              {
+                "type": "file",
+                "name": "500f0a45995658318ae85531504de9868d16ce",
+                "path": ".git/objects/95/500f0a45995658318ae85531504de9868d16ce",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/95/500f0a45995658318ae85531504de9868d16ce"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "ad",
+            "path": ".git/objects/ad",
+            "children": [
+              {
+                "type": "file",
+                "name": "452bd38dee3eff389cfb5aff1b45e6ac631849",
+                "path": ".git/objects/ad/452bd38dee3eff389cfb5aff1b45e6ac631849",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/ad/452bd38dee3eff389cfb5aff1b45e6ac631849"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "ae",
+            "path": ".git/objects/ae",
+            "children": [
+              {
+                "type": "file",
+                "name": "868c164ce4b0add90bad2586e1c515c251c8df",
+                "path": ".git/objects/ae/868c164ce4b0add90bad2586e1c515c251c8df",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/ae/868c164ce4b0add90bad2586e1c515c251c8df"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "b6",
+            "path": ".git/objects/b6",
+            "children": [
+              {
+                "type": "file",
+                "name": "aa05fc7eccc4bebe649e0cbf9039f840bd4cfd",
+                "path": ".git/objects/b6/aa05fc7eccc4bebe649e0cbf9039f840bd4cfd",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/b6/aa05fc7eccc4bebe649e0cbf9039f840bd4cfd"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "bf",
+            "path": ".git/objects/bf",
+            "children": [
+              {
+                "type": "file",
+                "name": "0d9dcd80677cf23522a42cbaeff744d0d2eec4",
+                "path": ".git/objects/bf/0d9dcd80677cf23522a42cbaeff744d0d2eec4",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/bf/0d9dcd80677cf23522a42cbaeff744d0d2eec4"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "c1",
+            "path": ".git/objects/c1",
+            "children": [
+              {
+                "type": "file",
+                "name": "9c35754f415397af7f9f87e31a8ea3e52b7e68",
+                "path": ".git/objects/c1/9c35754f415397af7f9f87e31a8ea3e52b7e68",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/c1/9c35754f415397af7f9f87e31a8ea3e52b7e68"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "de",
+            "path": ".git/objects/de",
+            "children": [
+              {
+                "type": "file",
+                "name": "69110e6b39373e7935a8c673dc1a2945e24ef0",
+                "path": ".git/objects/de/69110e6b39373e7935a8c673dc1a2945e24ef0",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/de/69110e6b39373e7935a8c673dc1a2945e24ef0"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "e4",
+            "path": ".git/objects/e4",
+            "children": [
+              {
+                "type": "file",
+                "name": "4a3e6cd9c918665eec268d66bda150f7f087e4",
+                "path": ".git/objects/e4/4a3e6cd9c918665eec268d66bda150f7f087e4",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/e4/4a3e6cd9c918665eec268d66bda150f7f087e4"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "e7",
+            "path": ".git/objects/e7",
+            "children": [
+              {
+                "type": "file",
+                "name": "4f9f8e5f0a17c413057e3913d79ddffd329553",
+                "path": ".git/objects/e7/4f9f8e5f0a17c413057e3913d79ddffd329553",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/e7/4f9f8e5f0a17c413057e3913d79ddffd329553"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "ef",
+            "path": ".git/objects/ef",
+            "children": [
+              {
+                "type": "file",
+                "name": "82964a36b9514915f2983986ecd04b5d4f268f",
+                "path": ".git/objects/ef/82964a36b9514915f2983986ecd04b5d4f268f",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/ef/82964a36b9514915f2983986ecd04b5d4f268f"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "f4",
+            "path": ".git/objects/f4",
+            "children": [
+              {
+                "type": "file",
+                "name": "2f3d2c4d9a11408492fb0eb1b451e0b97ac340",
+                "path": ".git/objects/f4/2f3d2c4d9a11408492fb0eb1b451e0b97ac340",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/objects/f4/2f3d2c4d9a11408492fb0eb1b451e0b97ac340"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "info",
+            "path": ".git/objects/info",
+            "children": []
+          },
+          {
+            "type": "directory",
+            "name": "pack",
+            "path": ".git/objects/pack",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "refs",
+        "path": ".git/refs",
+        "children": [
+          {
+            "type": "directory",
+            "name": "heads",
+            "path": ".git/refs/heads",
+            "children": [
+              {
+                "type": "file",
+                "name": "main",
+                "path": ".git/refs/heads/main",
+                "url": "https://github.com/GammardX/Documents/blob/main/.git/refs/heads/main"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "remotes",
+            "path": ".git/refs/remotes",
+            "children": [
+              {
+                "type": "directory",
+                "name": "origin",
+                "path": ".git/refs/remotes/origin",
+                "children": [
+                  {
+                    "type": "file",
+                    "name": "main",
+                    "path": ".git/refs/remotes/origin/main",
+                    "url": "https://github.com/GammardX/Documents/blob/main/.git/refs/remotes/origin/main"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "tags",
+            "path": ".git/refs/tags",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "name": "shallow",
+        "path": ".git/shallow",
+        "url": "https://github.com/GammardX/Documents/blob/main/.git/shallow"
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "name": ".github",
+    "path": ".github",
+    "children": [
+      {
+        "type": "directory",
+        "name": "scripts",
+        "path": ".github/scripts",
+        "children": [
+          {
+            "type": "file",
+            "name": "generateIndex.js",
+            "path": ".github/scripts/generateIndex.js",
+            "url": "https://github.com/GammardX/Documents/blob/main/.github/scripts/generateIndex.js"
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "workflows",
+        "path": ".github/workflows",
+        "children": [
+          {
+            "type": "file",
+            "name": "generate-index.yml",
+            "path": ".github/workflows/generate-index.yml",
+            "url": "https://github.com/GammardX/Documents/blob/main/.github/workflows/generate-index.yml"
+          },
+          {
+            "type": "file",
+            "name": "update_last_modified.yml",
+            "path": ".github/workflows/update_last_modified.yml",
+            "url": "https://github.com/GammardX/Documents/blob/main/.github/workflows/update_last_modified.yml"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "name": "Documenti esterni",
+    "path": "Documenti esterni",
+    "children": [
+      {
+        "type": "directory",
+        "name": "Verbali",
+        "path": "Documenti esterni/Verbali",
+        "children": [
+          {
+            "type": "file",
+            "name": "VE_2025_10_20.pdf",
+            "path": "Documenti esterni/Verbali/VE_2025_10_20.pdf",
+            "url": "https://github.com/GammardX/Documents/blob/main/Documenti esterni/Verbali/VE_2025_10_20.pdf"
+          },
+          {
+            "type": "file",
+            "name": "VE_2025_10_22.pdf",
+            "path": "Documenti esterni/Verbali/VE_2025_10_22.pdf",
+            "url": "https://github.com/GammardX/Documents/blob/main/Documenti esterni/Verbali/VE_2025_10_22.pdf"
+          },
+          {
+            "type": "file",
+            "name": "VE_2025_10_23.pdf",
+            "path": "Documenti esterni/Verbali/VE_2025_10_23.pdf",
+            "url": "https://github.com/GammardX/Documents/blob/main/Documenti esterni/Verbali/VE_2025_10_23.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "directory",
+    "name": "Documenti interni",
+    "path": "Documenti interni",
+    "children": [
+      {
+        "type": "file",
+        "name": "Analisi dei capitolati.pdf",
+        "path": "Documenti interni/Analisi dei capitolati.pdf",
+        "url": "https://github.com/GammardX/Documents/blob/main/Documenti interni/Analisi dei capitolati.pdf"
+      },
+      {
+        "type": "directory",
+        "name": "Verbali",
+        "path": "Documenti interni/Verbali",
+        "children": [
+          {
+            "type": "file",
+            "name": "VI_2025_10_16.pdf",
+            "path": "Documenti interni/Verbali/VI_2025_10_16.pdf",
+            "url": "https://github.com/GammardX/Documents/blob/main/Documenti interni/Verbali/VI_2025_10_16.pdf"
+          },
+          {
+            "type": "file",
+            "name": "VI_2025_10_23.pdf",
+            "path": "Documenti interni/Verbali/VI_2025_10_23.pdf",
+            "url": "https://github.com/GammardX/Documents/blob/main/Documenti interni/Verbali/VI_2025_10_23.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "file",
+    "name": "README.md",
+    "path": "README.md",
+    "url": "https://github.com/GammardX/Documents/blob/main/README.md"
+  },
+  {
+    "type": "file",
+    "name": "index.html",
+    "path": "index.html",
+    "url": "https://github.com/GammardX/Documents/blob/main/index.html"
+  },
+  {
+    "type": "directory",
+    "name": "website",
+    "path": "website",
+    "children": [
+      {
+        "type": "directory",
+        "name": "assets",
+        "path": "website/assets",
+        "children": [
+          {
+            "type": "file",
+            "name": "Gammard_Logo_full2.png",
+            "path": "website/assets/Gammard_Logo_full2.png",
+            "url": "https://github.com/GammardX/Documents/blob/main/website/assets/Gammard_Logo_full2.png"
+          },
+          {
+            "type": "file",
+            "name": "Icon.png",
+            "path": "website/assets/Icon.png",
+            "url": "https://github.com/GammardX/Documents/blob/main/website/assets/Icon.png"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "name": "script.js",
+        "path": "website/script.js",
+        "url": "https://github.com/GammardX/Documents/blob/main/website/script.js"
+      },
+      {
+        "type": "file",
+        "name": "style.css",
+        "path": "website/style.css",
+        "url": "https://github.com/GammardX/Documents/blob/main/website/style.css"
+      }
+    ]
+  }
+]
