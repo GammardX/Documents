@@ -8,6 +8,7 @@ async function loadDocuments(path, listContainer) {
 
 		// Filtra solo file (non directory)
 		const files = data.filter((item) => item.type === 'file');
+		console.log(files);
 
 		files.forEach((file) => {
 			const p = document.createElement('p');
