@@ -10,16 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout con token predefinito per push
+      # Checkout del repository
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.PAT_TOKEN  }}
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Update last-update timestamp
         run: |
           export TZ="Europe/Rome"
           DATE=$(date +"%Y/%m/%d %H:%M")
-          sed -i "s|<p id=\"last-update\">.*</p>|<p id=\"last-update\">Last update: $DATE</p>|" index.html
+          # Sostituzione robusta anche se l'HTML è formattato su più righe
+          sed -z -i "s|<p id=\"last-update\">[^<]*</p>|<p id=\"last-update\">Last update: $DATE</p>|" index.html
 
       - name: Commit and push changes
         run: |

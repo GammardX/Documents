@@ -8,6 +8,11 @@ body, html {
   background-color: #f8f9fb;
 }
 
+body {
+  padding-top: 4em; /* regola in base all'altezza effettiva della navbar */
+}
+
+
 a {
   color: #0054A6; 
   text-decoration: none;
@@ -20,13 +25,21 @@ a:hover {
 }
 
 nav {
-  max-width: 40em;
-  margin: auto;
+  position: fixed;        /* fissa la navbar in alto */
+  top: 0;                 /* posizione in cima alla finestra */
+  left: 50%;              /* centro orizzontale della finestra */
+  transform: translateX(-50%); /* centra il nav esattamente */
+  width: 100%;            /* occupa tutta la larghezza della pagina */
+  max-width: 40em;        /* ma il contenuto resta limitato come prima */
   padding: 2em 3em 0 3em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #f8f9fb; /* stesso colore di sfondo della pagina */
+  z-index: 1000;          /* sta sopra agli altri elementi */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* opzionale, per dare profondità */
 }
+
 
 #header-logo {
   width: 10em;
@@ -44,7 +57,9 @@ section {
   max-width: 40em;
   margin: auto;
   padding: 1em 3em;
+  scroll-margin-top: 4em; /* altezza della navbar + padding extra */
 }
+
 
 section h1 {
   text-align: center;
@@ -67,6 +82,10 @@ section h1 {
   color: gray;
 }
 
+#Copyright {
+  text-align: center;
+}
+
 #link-github {
   word-break: break-word;
 }
@@ -77,9 +96,17 @@ section h1 {
 }
 
 @media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
+   nav {
+    position: static;  /* navbar torna normale, scorre con la pagina */
+    transform: none;
+    box-shadow: none;
+    width: auto;
+    max-width: 100%;
+    padding: 1em 1em 0 1em; /* regola padding se vuoi */
+  }
+
+  body {
+    padding-top: 0; /* non serve più spazio extra */
   }
 
   section {
