@@ -40,6 +40,9 @@ nav {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* opzionale, per dare profondità */
 }
 
+#Lettere {
+  margin-bottom: 4em; /* crea spazio prima di DOCUMENTI */
+}
 
 #header-logo {
   width: 10em;
@@ -96,32 +99,35 @@ section h1 {
 }
 
 @media (max-width: 600px) {
-   nav {
-    position: static;  /* navbar torna normale, scorre con la pagina */
+  #nav-navigation {
+    display: none;
+  }
+
+  nav {
+    position: static;  /* scorre con la pagina */
     transform: none;
     box-shadow: none;
     width: auto;
     max-width: 100%;
-    padding: 1em 1em 0 1em; /* regola padding se vuoi */
+    padding: 0; /* niente padding extra */
+  }
+
+  /* Mostra solo il logo al posto della navbar */
+  #header-logo {
+    display: block;
+    margin: 1em auto; /* centrato */
+    width: 9em;
   }
 
   body {
-    padding-top: 0; /* non serve più spazio extra */
+    padding-top: 0; /* niente spazio extra */
   }
 
   section {
     padding: 0.8em 1em;
   }
-
-  #nav-navigation {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #header-logo {
-    width: 9em;
-  }
 }
+
 
 .toggle-section::before {
   content: "▼ ";
