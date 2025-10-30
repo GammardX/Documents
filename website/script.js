@@ -9,7 +9,7 @@ async function loadDocuments(path, listContainer) {
 		const data = await response.json();
 
 		// Filtra solo file (non directory)
-		const files = data.filter((item) => item.type === 'file').reverse();
+		const files = data.filter((item) => (item.type === 'file' && item.name.endsWith(".pdf"))).reverse();
 
 		files.forEach((file) => {
 			const fileName = file.name.replace(/\.pdf$/i, '');
@@ -34,6 +34,7 @@ async function loadDocuments(path, listContainer) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+	loadDocuments('', document.getElementById('Lettere'));
 	loadDocuments('Documenti esterni', document.getElementById('Doc-Esterni'));
 	loadDocuments('Documenti interni', document.getElementById('Doc-Interni'));
 	loadDocuments(
