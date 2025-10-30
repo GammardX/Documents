@@ -15,7 +15,7 @@ async function loadDocuments(path, listContainer) {
 			const fileName = file.name.replace(/\.pdf$/i, '');
 
 			const rawPath = `${path}/${file.name}`;
-			const fileUrl = `https://gammardx.github.io/Documents/${encodeURI(rawPath)}`;
+			const fileUrl = encodeURI(rawPath);
 			const p = document.createElement('p');
 			p.setAttribute('content', fileName);
 
