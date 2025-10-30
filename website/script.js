@@ -34,7 +34,7 @@ async function loadDocuments(path, listContainer) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	loadDocuments('', document.getElementById('Lettere'));
+	loadDocuments('.', document.getElementById('Lettere'));
 	loadDocuments('Documenti esterni', document.getElementById('Doc-Esterni'));
 	loadDocuments('Documenti interni', document.getElementById('Doc-Interni'));
 	loadDocuments(
