@@ -689,8 +689,8 @@
     <footer>
         <p>Last update: 2026/02/21 &nbsp;·&nbsp; <a href="https://github.com/GammardX/Documents">GammardX</a> © All Rights Reserved</p>
     </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    
+<script>
     const repoOwner = 'GammardX';
     const repoName = 'Documents';
 
@@ -779,5 +779,13 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.docs-card, .contact-card, .team-member').forEach(el => {
-        
+        document.querySelectorAll('.docs-card, .contact-card, .team-member').forEach((el, i) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(16px)';
+            el.style.transition = `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`;
+            observer.observe(el);
+        });
+    });
+    </script>
+</body>
+</html>
