@@ -1,120 +1,783 @@
 <!DOCTYPE html>
-<html lang="it ">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Questa pagina è dedicata alla documentazione e presentazione del progetto SWE del gruppo GammardX dell'università di Padova." >
-	<meta name="keywords" content="
-    GammardX,
-    Ingegneria del Software,
-    Università di Padova,
-    progetto didattico,
-    documentazione tecnica,
-    analisi dei requisiti,
-    piano di progetto,
-    piano di qualifica,
-    specifica architetturale,
-    manuale utente,
-    manuale sviluppatore,
-    gestione autenticazione,
-    progetto universitario,
-    team GammardX,
-    sviluppo software,
-    software engineering
-    ">
-	<meta name="author" content="Stevanin Michele" >
+    <meta name="description" content="Questa pagina è dedicata alla documentazione e presentazione del progetto SWE del gruppo GammardX dell'università di Padova.">
+    <meta name="keywords" content="GammardX, Ingegneria del Software, Università di Padova, progetto didattico, documentazione tecnica">
+    <meta name="author" content="Stevanin Michele">
     <title>GammardX</title>
-    <link rel="stylesheet" href="website/style.css">
-    <script src="website/script.js" defer></script>
-
-
     <link rel="icon" type="image/x-icon" href="website/assets/Icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
+    <style>
+        :root {
+            --blue-deep: #001A3D;
+            --blue-mid: #0054A6;
+            --blue-bright: #1A7FFF;
+            --blue-light: #E8F1FC;
+            --accent: #FF4B1F;
+            --unipd: #B5121B;
+            --bg: #F4F6FA;
+            --surface: #FFFFFF;
+            --text: #001A3D;
+            --text-muted: #5A6A80;
+            --border: #D0DAEA;
+            --nav-h: 64px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Mono', monospace;
+            font-size: 14px;
+            color: var(--text);
+            background: var(--bg);
+            padding-top: var(--nav-h);
+            overflow-x: hidden;
+        }
+
+        /* ── NOISE TEXTURE OVERLAY ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.4;
+        }
+
+        /* ── NAVBAR ── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-h);
+            background: rgba(244, 246, 250, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2.5rem;
+            z-index: 1000;
+        }
+
+        #header-logo {
+            height: 32px;
+            width: auto;
+        }
+
+        #nav-navigation {
+            display: flex;
+            gap: 0.25rem;
+            align-items: center;
+        }
+
+        #nav-navigation a {
+            font-family: 'DM Mono', monospace;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.4rem 0.9rem;
+            border-radius: 100px;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        #nav-navigation a:hover {
+            color: var(--blue-mid);
+            background: var(--blue-light);
+        }
+
+        /* ── HERO SECTION ── */
+        #prodotto {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 5rem 2.5rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--blue-bright);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 0.6s 0.1s forwards;
+        }
+
+        .hero-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            color: var(--blue-deep);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 0.6s 0.2s forwards;
+        }
+
+        .hero-title span {
+            color: var(--blue-mid);
+        }
+
+        .hero-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeUp 0.6s 0.3s forwards;
+        }
+
+        .hero-cta {
+            opacity: 0;
+            animation: fadeUp 0.6s 0.4s forwards;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: 'DM Mono', monospace;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 0.06em;
+            color: white;
+            background: var(--blue-mid);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            box-shadow: 0 4px 16px rgba(0, 84, 166, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-bright);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 84, 166, 0.35);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-primary svg { flex-shrink: 0; }
+
+        /* ── SECTION WRAPPER ── */
+        .section-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2.5rem;
+        }
+
+        /* ── SECTION HEADING ── */
+        .section-heading {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            letter-spacing: -0.01em;
+            color: var(--blue-deep);
+            margin-bottom: 0.4rem;
+        }
+
+        .section-divider {
+            width: 3rem;
+            height: 3px;
+            background: var(--blue-mid);
+            border-radius: 2px;
+            margin-bottom: 2rem;
+        }
+
+        /* ── DOCUMENTS LAYOUT ── */
+        #documenti { background: var(--bg); }
+
+        /* Letters card */
+        .docs-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .docs-card:hover {
+            box-shadow: 0 4px 20px rgba(0, 26, 61, 0.08);
+        }
+
+        .docs-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .docs-card-title {
+            font-family: 'DM Mono', monospace;
+            font-weight: 500;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--blue-mid);
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .docs-card-title svg {
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        .toggle-arrow {
+            width: 28px; height: 28px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            background: var(--blue-light);
+            color: var(--blue-mid);
+            transition: transform 0.25s, background 0.2s;
+            flex-shrink: 0;
+        }
+
+        .toggle-arrow.collapsed { transform: rotate(-90deg); }
+
+        .docs-card-body { margin-top: 1.2rem; }
+
+        /* File links */
+        .file-list { display: flex; flex-direction: column; gap: 0.35rem; }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.55rem 0.75rem;
+            border-radius: 8px;
+            transition: background 0.15s;
+        }
+
+        .file-item:hover { background: var(--blue-light); }
+
+        .file-icon {
+            width: 32px; height: 32px;
+            background: var(--blue-light);
+            border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            color: var(--blue-mid);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .file-link {
+            font-family: 'DM Mono', monospace;
+            font-size: 12.5px;
+            color: var(--text);
+            text-decoration: none;
+            line-height: 1.4;
+            transition: color 0.15s;
+        }
+
+        .file-link:hover {
+            color: var(--blue-bright);
+            text-decoration: none;
+        }
+
+        /* Subsection */
+        .subsection-header {
+            font-family: 'DM Mono', monospace;
+            font-weight: 400;
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            padding: 0.9rem 0.75rem 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            user-select: none;
+        }
+
+        .subsection-header .tiny-arrow {
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .subsection-header.collapsed .tiny-arrow { transform: rotate(-90deg); }
+
+        .subsection-body { padding-left: 0.5rem; }
+
+        /* Loading state */
+        .loading-hint {
+            font-size: 11px;
+            color: var(--text-muted);
+            padding: 0.5rem 0.75rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+
+        .loading-hint::before {
+            content: '';
+            width: 14px; height: 14px;
+            border: 2px solid var(--border);
+            border-top-color: var(--blue-mid);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            flex-shrink: 0;
+        }
+
+        /* ── ABOUT ── */
+        #about { background: var(--blue-deep); color: white; }
+
+        #about .section-heading { color: white; }
+        #about .section-divider { background: var(--blue-bright); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .about-block p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1rem;
+        }
+
+        .about-block a {
+            color: var(--blue-bright);
+            text-decoration: none;
+        }
+
+        .about-block a:hover { text-decoration: underline; }
+
+        .about-block a.red_unipd { color: #E8474F; }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            transition: background 0.2s;
+        }
+
+        .team-member:hover { background: rgba(255,255,255,0.1); }
+
+        .team-avatar {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: var(--blue-mid);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'DM Mono', monospace;
+            font-weight: 500;
+            font-size: 10px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .team-member a {
+            font-size: 12px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .team-member a:hover { color: white; }
+
+        /* ── CONTACTS ── */
+        #contatti { background: var(--bg); }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--blue-bright);
+            box-shadow: 0 4px 20px rgba(0, 26, 61, 0.08);
+        }
+
+        .contact-icon {
+            width: 44px; height: 44px;
+            border-radius: 12px;
+            background: var(--blue-light);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--blue-mid);
+            flex-shrink: 0;
+        }
+
+        .contact-label {
+            font-family: 'DM Mono', monospace;
+            font-weight: 400;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+        }
+
+        .contact-value {
+            font-size: 12.5px;
+            word-break: break-all;
+        }
+
+        .contact-value a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .contact-value a:hover { color: var(--blue-bright); }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--blue-deep);
+            color: rgba(255,255,255,0.4);
+            text-align: center;
+            padding: 2rem;
+            font-size: 11px;
+            letter-spacing: 0.05em;
+        }
+
+        footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+        footer a:hover { color: white; }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 640px) {
+            :root { --nav-h: 56px; }
+
+            #nav-navigation { display: none; }
+
+            nav { padding: 0 1.2rem; }
+
+            .section-wrapper { padding: 2rem 1.2rem; }
+
+            #prodotto { padding: 3rem 1.2rem 2.5rem; }
+
+            .about-grid,
+            .contact-grid,
+            .team-grid { grid-template-columns: 1fr; }
+
+            .hero-title { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
 
+    <!-- NAV -->
     <nav>
-        <img id="header-logo" src="website/assets/Gammard_Logo_full2.png" alt="logo del gruppo raffigurante la scritta GammardX">
+        <img id="header-logo" src="website/assets/Gammard_Logo_full2.png" alt="logo GammardX">
         <div id="nav-navigation">
-        <p><a href="#prodotto">Second Brain</a></p>
-        <p><a href="#documenti">Documenti</a></p>
-        <p><a href="#about">About</a></p>
-        <p><a href="#contatti">Contatti</a></p>
+            <a href="#prodotto">Second Brain</a>
+            <a href="#documenti">Documenti</a>
+            <a href="#about">About</a>
+            <a href="#contatti">Contatti</a>
         </div>
     </nav>
 
+    <!-- HERO -->
     <section id="prodotto">
-        <h1>SECOND BRAIN</h1>
-        <p><a href="https://github.com/GammardX/MinimumViableProduct" target="_blank">Proof of Concept</a></p>
-    </section>
-
-    <section id="documenti">
-        <h1>LETTERE DI PRESENTAZIONE</h1>
-        <div id="Lettere">
-        </div>
-
-        <h1>DOCUMENTI</h1>
-
-        <h3 class="toggle-section">ESTERNI</h3>
-        <div class="indented toggle-content">
-            <div id="Doc-Esterni">
-            </div>
-            <p class="toggle-subsection">Verbali</p>
-            <div class="indented toggle-content" id="Doc-Esterni-Verbali">
-            </div>
-        </div>
-
-        <h3 class="toggle-section">INTERNI</h3>
-        <div class="indented toggle-content">
-            <div id="Doc-Interni">
-            </div>
-            <p class="toggle-subsection">Verbali</p>
-            <div class="indented toggle-content" id="Doc-Interni-Verbali">
-            </div>
-        </div>
-
-    </section>
-
-    <section id="about">
-        <h1>ABOUT</h1>
-        <p>Il gruppo GammardX nasce per affrontare il progetto didattico del corso di Ingegneria del Software dell'<a class="red_unipd" href="https://www.unipd.it/" target="_blank">Università di Padova</a>.</p>
-        <p>I membri del gruppo sono:
-        <ul>
-            <li>
-                <a href="https://github.com/AleZane29" target="_blank">Alessio Zanella</a>
-            </li>
-            <li>
-                <a href="https://github.com/Mark-oth" target="_blank">Marco Cossi</a>
-            </li>
-            <li>
-                <a href="https://github.com/intmainale" target="_blank">Alessandro Savio</a>
-            </li>
-            <li>
-                <a href="https://github.com/Steva0" target="_blank">Michele Stevanin</a>
-            </li>
-            <li>
-                <a href="https://github.com/Riccartacardo" target="_blank">Riccardo Carta</a>
-            </li>
-            <li>
-                <a href="https://github.com/GiulioBotta" target="_blank">Giulio Bottacin</a>
-            </li>
-            <li>
-                <a href="https://github.com/danikibi" target="_blank">Daniela Erba</a>
-            </li>
-        </ul>
+        <p class="hero-label">Ingegneria del Software · UniPD · 2025/26</p>
+        <h1 class="hero-title">Gammard<span>X</span></h1>
+        <p class="hero-desc">
+            Documentazione e risorse del progetto didattico del corso di Ingegneria del Software dell'Università di Padova.
         </p>
-        <p>Il progetto Second Brain viene proposto al gruppo di progetto didattico da <a href="https://www.zucchetti.it/it/cms/home.html" target="_blank">Zucchetti S.p.A</a>.</p>
+        <div class="hero-cta">
+            <a class="btn-primary" href="https://github.com/GammardX/MinimumViableProduct" target="_blank">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+                Minimum Viable Product
+            </a>
+            
+            <a class="btn-primary" href="https://github.com/GammardX/ProofOfConcept" target="_blank">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+                Proof of Concept
+            </a>
+        </div>
     </section>
 
-    <section id="contatti">
-        <h1>CONTATTI</h1>
-        <p>Repository Github: <a id="link-github" href="https://github.com/GammardX/Documents" target="_blank">https://github.com/GammardX/Documents</a></p>
-        <p>Email: <a href="mailto:gammardx@gmail.com" class="email-link">gammardx@gmail.com</a></p>
-    </section>
+    <!-- DOCUMENTI -->
+    <div id="documenti">
+        <div class="section-wrapper">
 
-    <p id="last-update">Last update: 2026/02/21 19:15</p>
-    <p id="Copyright"><a href="https://github.com/GammardX/Documents">GammardX</a> © Copyright - All Rights Reserved.</p>
+            <h2 class="section-heading">Documenti</h2>
+            <div class="section-divider"></div>
 
-</body>
-</html>
+            <!-- Lettere di presentazione -->
+            <div class="docs-card">
+                <div class="docs-card-header toggle-section">
+                    <div class="docs-card-title">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Lettere di Presentazione
+                    </div>
+                    <span class="toggle-arrow">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                </div>
+                <div class="docs-card-body toggle-content">
+                    <div class="file-list" id="Lettere">
+                        <div class="loading-hint">Caricamento in corso…</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Esterni -->
+            <div class="docs-card">
+                <div class="docs-card-header toggle-section">
+                    <div class="docs-card-title">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Documenti Esterni
+                    </div>
+                    <span class="toggle-arrow">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                </div>
+                <div class="docs-card-body toggle-content">
+                    <div class="file-list" id="Doc-Esterni">
+                        <div class="loading-hint">Caricamento in corso…</div>
+                    </div>
+                    <div class="subsection-header toggle-subsection">
+                        <span class="tiny-arrow">▾</span>
+                        Verbali
+                    </div>
+                    <div class="subsection-body toggle-content">
+                        <div class="file-list" id="Doc-Esterni-Verbali">
+                            <div class="loading-hint">Caricamento in corso…</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interni -->
+            <div class="docs-card">
+                <div class="docs-card-header toggle-section">
+                    <div class="docs-card-title">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        Documenti Interni
+                    </div>
+                    <span class="toggle-arrow">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                </div>
+                <div class="docs-card-body toggle-content">
+                    <div class="file-list" id="Doc-Interni">
+                        <div class="loading-hint">Caricamento in corso…</div>
+                    </div>
+                    <div class="subsection-header toggle-subsection">
+                        <span class="tiny-arrow">▾</span>
+                        Verbali
+                    </div>
+                    <div class="subsection-body toggle-content">
+                        <div class="file-list" id="Doc-Interni-Verbali">
+                            <div class="loading-hint">Caricamento in corso…</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about">
+        <div class="section-wrapper">
+            <h2 class="section-heading">About</h2>
+            <div class="section-divider"></div>
+            <div class="about-grid">
+                <div class="about-block">
+                    <p>Il gruppo <strong style="color:white">GammardX</strong> nasce per affrontare il progetto didattico del corso di Ingegneria del Software dell'<a class="red_unipd" href="https://www.unipd.it/" target="_blank">Università di Padova</a>.</p>
+                    <p>Il progetto <strong style="color:white">Second Brain</strong> viene proposto al gruppo da <a href="https://www.zucchetti.it/" target="_blank">Zucchetti S.p.A</a>.</p>
+                </div>
+                <div class="about-block">
+                    <div class="team-grid">
+                        <div class="team-member"><div class="team-avatar">AZ</div><a href="https://github.com/AleZane29" target="_blank">Alessio Zanella</a></div>
+                        <div class="team-member"><div class="team-avatar">MC</div><a href="https://github.com/Mark-oth" target="_blank">Marco Cossi</a></div>
+                        <div class="team-member"><div class="team-avatar">AS</div><a href="https://github.com/intmainale" target="_blank">Alessandro Savio</a></div>
+                        <div class="team-member"><div class="team-avatar">MS</div><a href="https://github.com/Steva0" target="_blank">Michele Stevanin</a></div>
+                        <div class="team-member"><div class="team-avatar">RC</div><a href="https://github.com/Riccartacardo" target="_blank">Riccardo Carta</a></div>
+                        <div class="team-member"><div class="team-avatar">GB</div><a href="https://github.com/GiulioBotta" target="_blank">Giulio Bottacin</a></div>
+                        <div class="team-member"><div class="team-avatar">DE</div><a href="https://github.com/danikibi" target="_blank">Daniela Erba</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTATTI -->
+    <div id="contatti">
+        <div class="section-wrapper">
+            <h2 class="section-heading">Contatti</h2>
+            <div class="section-divider"></div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </div>
+                    <div>
+                        <div class="contact-label">GitHub</div>
+                        <div class="contact-value"><a href="https://github.com/GammardX/Documents" target="_blank">github.com/GammardX/Documents</a></div>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <div>
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value"><a href="mailto:gammardx@gmail.com">gammardx@gmail.com</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Last update: 2026/02/21 &nbsp;·&nbsp; <a href="https://github.com/GammardX/Documents">GammardX</a> © All Rights Reserved</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const repoOwner = 'GammardX';
+    const repoName = 'Documents';
+
+    async function loadDocuments(path, listContainer) {
+        try {
+            const response = await fetch(
+                `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}`
+            );
+            const data = await response.json();
+            const files = data.filter(item => item.type === 'file' && item.name.endsWith('.pdf')).reverse();
+
+            listContainer.innerHTML = '';
+
+            if (files.length === 0) {
+                listContainer.innerHTML = '<p style="font-size:12px;color:var(--text-muted);padding:0.5rem 0.75rem;">Nessun documento disponibile.</p>';
+                return;
+            }
+
+            files.forEach(file => {
+                const fileName = file.name.replace(/\.pdf$/i, '');
+                const rawPath = `${path}/${file.name}`;
+                const fileUrl = encodeURI(rawPath);
+
+                const item = document.createElement('div');
+                item.className = 'file-item';
+
+                item.innerHTML = `
+                    <div class="file-icon">PDF</div>
+                    <a class="file-link" href="${fileUrl}" target="_blank">${fileName}</a>
+                `;
+                listContainer.appendChild(item);
+            });
+        } catch (error) {
+            console.error('Errore nel caricamento dei file:', error);
+            listContainer.innerHTML = '<p style="font-size:12px;color:var(--text-muted);padding:0.5rem 0.75rem;">Impossibile caricare i documenti.</p>';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadDocuments('.', document.getElementById('Lettere'));
+        loadDocuments('Documenti esterni', document.getElementById('Doc-Esterni'));
+        loadDocuments('Documenti interni', document.getElementById('Doc-Interni'));
+        loadDocuments('Documenti esterni/Verbali', document.getElementById('Doc-Esterni-Verbali'));
+        loadDocuments('Documenti interni/Verbali', document.getElementById('Doc-Interni-Verbali'));
+
+        // Toggle sections
+        document.querySelectorAll('.toggle-section').forEach(header => {
+            const card = header.closest('.docs-card');
+            const content = card ? card.querySelector('.docs-card-body') : header.nextElementSibling;
+            const arrow = header.querySelector('.toggle-arrow');
+            if (!content) return;
+
+            content.style.display = 'block';
+            content.dataset.visible = 'true';
+
+            header.addEventListener('click', () => {
+                const visible = content.dataset.visible === 'true';
+                content.style.display = visible ? 'none' : 'block';
+                content.dataset.visible = visible ? 'false' : 'true';
+                if (arrow) arrow.classList.toggle('collapsed', visible);
+            });
+        });
+
+        document.querySelectorAll('.toggle-subsection').forEach(header => {
+            const content = header.nextElementSibling;
+            if (!content) return;
+
+            content.style.display = 'block';
+            content.dataset.visible = 'true';
+
+            header.addEventListener('click', () => {
+                const visible = content.dataset.visible === 'true';
+                content.style.display = visible ? 'none' : 'block';
+                content.dataset.visible = visible ? 'false' : 'true';
+                header.classList.toggle('collapsed', visible);
+            });
+        });
+
+        // Scroll animation
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.docs-card, .contact-card, .team-member').forEach(el => {
+        
