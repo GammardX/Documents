@@ -700,8 +700,13 @@
                 `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}`
             );
             const data = await response.json();
-            const files = data.filter(item => item.type === 'file' && item.name.endsWith('.pdf')).reverse();
-
+            const PINNED_LAST = 'Preventivo costi e assunzione impegni.pdf';
+            let files = data.filter(item => item.type === 'file' && item.name.endsWith('.pdf')).reverse();
+            const pinnedIndex = files.findIndex(f => f.name === PINNED_LAST);
+            if (pinnedIndex !== -1) {
+                const [pinned] = files.splice(pinnedIndex, 1);
+                files.push(pinned);
+            }
             listContainer.innerHTML = '';
 
             if (files.length === 0) {
